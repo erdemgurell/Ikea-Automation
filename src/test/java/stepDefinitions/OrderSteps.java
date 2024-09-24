@@ -11,7 +11,6 @@ import utilities.ReusableMethods;
 import java.util.List;
 
 public class OrderSteps extends ReusableMethods {
-
     OrderPOM orderPOM = new OrderPOM();
 
     @Given("user searches for a product {string}")
@@ -30,6 +29,7 @@ public class OrderSteps extends ReusableMethods {
     public void userAddsTheProductToTheCart() {
         jsClick(orderPOM.showCartButton);
     }
+
     @And("user adds an address for delivery")
     public void userAddsAnAddressForDelivery(DataTable dt) {
         jsClick(orderPOM.addAddressButton);
@@ -37,14 +37,12 @@ public class OrderSteps extends ReusableMethods {
         List<List<String>> strLinkList = dt.asLists(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {
-            // GET THE NECESSARY WEB ELEMENT
             WebElement txtBox = orderPOM.getWebElement(strLinkList.get(i).get(0));
-            // SEND KEYS TO THAT ELEMENT
             orderPOM.sendKeysFunctionNoScroll(txtBox, strLinkList.get(i).get(1));
         }
-        selectByIndex(orderPOM.province,1);
-        selectByIndex(orderPOM.district,2);
-        selectByIndex(orderPOM.neighborhood,4);
+        selectByIndex(orderPOM.province, 1);
+        selectByIndex(orderPOM.district, 2);
+        selectByIndex(orderPOM.neighborhood, 4);
         sendKeysFunction(orderPOM.addressTextBox, "Istanbul");
         sendKeysFunctionNoScroll(orderPOM.socialIDInput, "-----");
         jsClick(orderPOM.addButton);
@@ -56,14 +54,11 @@ public class OrderSteps extends ReusableMethods {
         jsClick(orderPOM.checkoutButton);
         sendKeysFunction(orderPOM.cardNameInput, "John Doe");
         sendKeysFunction(orderPOM.cardNumberInput, "5436453456876456");
-        selectByIndex(orderPOM.cardMonth,2);
-        selectByIndex(orderPOM.cardYear,3);
+        selectByIndex(orderPOM.cardMonth, 2);
+        selectByIndex(orderPOM.cardYear, 3);
         sendKeysFunction(orderPOM.cvcInput, "327");
         jsClick(orderPOM.singlePaymentOption);
         jsClick(orderPOM.agreementCheckbox);
         jsClick(orderPOM.buyButton);
-
     }
-
-
 }

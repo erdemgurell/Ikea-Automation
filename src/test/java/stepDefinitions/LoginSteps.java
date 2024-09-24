@@ -15,7 +15,6 @@ import utilities.ReusableMethods;
 import java.util.List;
 
 public class LoginSteps extends ReusableMethods {
-
     RegisterPagePOM registerPagePOM = new RegisterPagePOM();
     LoginPOM loginPOM = new LoginPOM();
 
@@ -27,7 +26,6 @@ public class LoginSteps extends ReusableMethods {
     @Then("user clicks on the login button")
     public void userClicksOnTheLoginButton() {
         registerPagePOM.jsClick(registerPagePOM.login_registerButton);
-
     }
 
     @When("user enters valid login credentials")
@@ -35,9 +33,7 @@ public class LoginSteps extends ReusableMethods {
         List<List<String>> strLinkList = dt.asLists(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {
-            // GET THE NECESSARY WEB ELEMENT
             WebElement txtBox = loginPOM.getWebElement(strLinkList.get(i).get(0));
-            // SEND KEYS TO THAT ELEMENT
             loginPOM.sendKeysFunctionNoScroll(txtBox, strLinkList.get(i).get(1));
         }
     }
@@ -45,7 +41,6 @@ public class LoginSteps extends ReusableMethods {
     @And("user submits the login form")
     public void userSubmitsTheLoginForm() {
         clickFunctionNoScroll(loginPOM.rememberMeButton);
-
         tabKeyMultiplePress(2);
         enterKeyMultiplePress(1);
         wait(2);
@@ -56,6 +51,4 @@ public class LoginSteps extends ReusableMethods {
     public void userShouldBeRedirectedToMyOrdersPage() {
 //        verifyContainsText(loginPOM.myOrdersText, "Siparişlerim");
     }
-
-
 }

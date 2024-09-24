@@ -7,11 +7,9 @@ import utilities.GWD;
 import utilities.ReusableMethods;
 
 public class LoginPOM extends ReusableMethods {
-
     public LoginPOM() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
-
 
     @FindBy(id = "txtEmail")
     public WebElement emailInputField;
@@ -28,7 +26,6 @@ public class LoginPOM extends ReusableMethods {
     @FindBy(xpath = "//div[@class='page-header clearfix']//h1[1]")
     public WebElement myOrdersText;
 
-
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "Email":
@@ -40,5 +37,4 @@ public class LoginPOM extends ReusableMethods {
         }
         return null;
     }
-
 }

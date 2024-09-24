@@ -1,0 +1,2 @@
+file:src/test/java/featureFiles/Register.feature:3
+file:src/test/java/featureFiles/Login.feature:3

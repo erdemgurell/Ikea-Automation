@@ -16,6 +16,7 @@ import io.cucumber.testng.CucumberOptions;
         dryRun = false,
         monochrome = false
 )
+
 public class TestRunnerSmoke extends AbstractTestNGCucumberTests {
 }
 

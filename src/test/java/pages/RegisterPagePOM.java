@@ -7,7 +7,6 @@ import utilities.GWD;
 import utilities.ReusableMethods;
 
 public class RegisterPagePOM extends ReusableMethods {
-
     public RegisterPagePOM() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -60,7 +59,6 @@ public class RegisterPagePOM extends ReusableMethods {
     @FindBy(id = "//h1[@class='page-title text-center']")
     public WebElement successMessage;
 
-
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "First Name":
@@ -76,9 +74,6 @@ public class RegisterPagePOM extends ReusableMethods {
             case "Confirm Password":
                 return this.confirmPasswordPlaceholder;
         }
-
         return null;
     }
-
-
 }

@@ -1,3 +1,4 @@
+@RegressionTest
 Feature: Order Process
 
   Background:

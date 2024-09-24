@@ -7,7 +7,6 @@ import utilities.GWD;
 import utilities.ReusableMethods;
 
 public class OrderPOM extends ReusableMethods {
-
     public OrderPOM() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -66,7 +65,6 @@ public class OrderPOM extends ReusableMethods {
     @FindBy(id = "ctl00_ContentPlaceHolder1_btnContinue")
     public WebElement checkoutButton;
 
-
     @FindBy(css = "input[name='name']")
     public WebElement cardNameInput;
 
@@ -102,10 +100,6 @@ public class OrderPOM extends ReusableMethods {
             case "Phone Number":
                 return this.phoneNumberInput;
         }
-
         return null;
     }
-
-
-
 }
